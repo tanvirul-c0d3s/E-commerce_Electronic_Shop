@@ -1,0 +1,156 @@
+
+[
+    {
+      "id": 1,
+      "name": "Laptop",
+      "category": "Computers",
+      "brand": "ExampleBrand",
+      "price": 79999,
+      "stock": 50,
+      "image":"images/pngwing.com (3).png",
+      "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display."
+      
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "category": "Mobiles",
+      "brand": "TechGadget",
+      "price": 49990,
+      "stock": 100,
+      "image":"images/870-8709963_samsung-j7-png.png",
+      "description": "Feature-rich smartphone with a 6.2-inch screen, 12MP dual camera, 128GB storage, and a 4000mAh battery."
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "category": "Audio",
+      "brand": "SoundBeats",
+      "price": 1490,
+      "stock": 30,
+      "image":"images/151-1512926_headphone-png - Copy.png",
+      "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color."
+    },
+    {
+      "id": 4,
+      "name": "Watches",
+      "category": "Wearables",
+      "brand": "FitTech",
+      "price": 1990,
+      "stock": 20,
+      "image":"images/17-174811_watch-png.png",
+      "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color."
+    },
+    {
+      "id": 5,
+      "name": "Speakers",
+      "category": "Audio",
+      "brand": "SoundBeats",
+      "price": 1490,
+      "stock": 30,
+      "image":"images/24-242304_speaker-png.png",
+      "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color."
+    },
+    {
+      "id": 6,
+      "name": "Television",
+      "category": "Video",
+      "brand": "Samsung",
+      "price": 149990,
+      "stock": 20,
+      "image":"images/784-7847160_old-tv-set-png.png",
+      "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color."
+    },
+
+    {
+      "id": 7,
+      "name": "Refrigerator",
+      "category": "Freezer",
+      "brand": "Samsung",
+      "price": 249990,
+      "stock": 20,
+      "image":"images/86-862736_refrigerator-png.png",
+      "description": "Refrigerator Keep it cool wherever you go, Store snacks, drinks, and beauty essentials, and a stylish silver color."
+    },
+
+    {
+      "id": 8,
+      "name": "Washing Machine",
+      "category": "Wash",
+      "brand": "LG",
+      "price": 35490,
+      "stock": 10,
+      "image":"images/427-4275429_washer-and-dryer-png.png",
+      "description": "Sparkling results, simple operation: Find the perfect washing machine for your clean and easy routine, and a stylish white color."
+    },
+
+    {
+      "id": 9,
+      "name": "Nintendo Switch",
+      "category": "Gaming",
+      "brand": "No brand",
+      "price": 7490,
+      "stock": 10,
+      "image":"images/33-339260_nintendo-switch-png.png",
+      "description": "Play anywhere, anytime: The Nintendo Switch transforms from home console to portable powerhouse, and a stylish white color."
+    },
+
+    {
+      "id": 10,
+      "name": "AC",
+      "category": "Cooling",
+      "brand": "LG",
+      "price": 35490,
+      "stock": 10,
+      "image":"images/248-2483248_split-ac-png.png",
+      "description": "Beat the heat: Stay cool and comfortable with our high-performance AC units."
+    },
+
+    {
+      "id": 11,
+      "name": "PS4 controller",
+      "category": "Gaming",
+      "brand": "No brand",
+      "price": 3490,
+      "stock": 10,
+      "image":"images/438-4380862_ps4-controller-png.png",
+      "description": "Experience the next level of immersion with the PS5 DualSense controller., and a stylish silver color."
+    },
+
+    {
+      "id": 12,
+      "name": "PS5 Controller",
+      "category": "Gaming",
+      "brand": "No brand",
+      "price": 5500,
+      "stock": 10,
+      "image":"images/359-3590735_psvr-png.png",
+      "description": "Experience the next level of immersion with the PS5 DualSense controller."
+    },
+
+    {
+      "id": 13,
+      "name": "pS5",
+      "category": "Gaming",
+      "brand": "Play Station",
+      "price": 149000,
+      "stock": 10,
+      "image":"images/438-4380862_ps4-controller-png.png",
+      "description": "Experience lightning-fast loading and stunning graphics with the PlayStation 5, and a stylish black color."
+    },
+
+    {
+      "id": 14,
+      "name": "Printer",
+      "category": "Printing",
+      "brand": "LG",
+      "price": 14990,
+      "stock": 10,
+      "image":"images/218-2184040_printer-png.png",
+      "description": "Sharp prints, made easy: Get high-quality results with our reliable printers, and a stylish white color."
+    }
+    
+
+
+]
+  

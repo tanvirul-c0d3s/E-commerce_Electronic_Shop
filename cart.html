@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cart Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .cart-item h4 { margin: 0; }
+        .cart-item p { margin: 0; color: #555; }
+        .cart-total { text-align: right; padding: 10px 0; border-top: 1px solid #ddd; font-size: 18px; }
+        .checkout-btn { background-color: #38508e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; font-size: 18px; border-radius: 5px; transition: background-color 0.3s ease; }
+        .checkout-btn:hover { background-color: #2c3e70; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cart</h1>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Total: ৳0</div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            let total = 0;
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <h4>${item.name}</h4>
+                    <p>৳${item.price} x ${item.quantity} = ৳${item.price * item.quantity}</p>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price * item.quantity;
+            });
+
+            cartTotal.textContent = `Total: ৳${total}`;
+        });
+    </script>
+</body>
+</html>

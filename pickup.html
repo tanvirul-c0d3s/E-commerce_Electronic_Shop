@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickup Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 600px; /* Adjust width as needed */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        select {
+            padding: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            margin: 20px auto;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for error messages */
+        .error-message {
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 100%; /* Adjust as needed */
+            height: 400px; /* Adjust as needed */
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Pickup Option</h1>
+        <div class="form-container">
+            <form id="pickupForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required><br>
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" name="email" required><br>
+                <label for="pickupDate">Pickup Date and Time:</label>
+                <input type="datetime-local" id="pickupDate" name="pickupDate" required><br>
+                <label for="pickupLocation">Pickup Location:</label>
+                <select id="pickupLocation" name="pickupLocation" required>
+                    <option value="">Select Pickup Location</option>
+                    <option value="location1">Location 1</option>
+                    <option value="location2">Location 2</option>
+                </select><br>
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="cash">Cash on Pickup</option>
+                    <option value="bkash">Bkash</option>
+                </select><br>
+                <!-- Error message placeholders -->
+                <div id="nameError" class="error-message"></div>
+                <div id="phoneError" class="error-message"></div>
+                <div id="emailError" class="error-message"></div>
+                <div id="pickupDateError" class="error-message"></div>
+                <div id="pickupLocationError" class="error-message"></div>
+                <div id="paymentMethodError" class="error-message"></div>
+                <button class="button" type="button" onclick="validateAndSubmit()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0805772560952!2d90.49464067511029!3d23.60144297877234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b1b754392299%3A0xc1661f4335fc4d72!2sR.%20P.%20Saha%20University!5e0!3m2!1sen!2sbd!4v1717874248146!5m2!1sen!2sbd" width="800" height="600" style="border: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script>
+        function validateAndSubmit() {
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(function(element) {
+                element.textContent = '';
+            });
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var pickupDate = document.getElementById("pickupDate").value;
+            var pickupLocation = document.getElementById("pickupLocation").value;
+            var paymentMethod = document.getElementById("paymentMethod").value;
+            var isValid = true;
+
+            // Simple validation for each field
+            if (!name) {
+                document.getElementById("nameError").textContent = 'Name is required';
+                isValid = false;
+            }
+            if (!phone) {
+                document.getElementById("phoneError").textContent = 'Phone number is required';
+                isValid = false;
+            }
+            if (!email) {
+                document.getElementById("emailError").textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                document.getElementById("emailError").textContent = 'Invalid email format';
+                isValid = false;
+            }
+            if (!pickupDate) {
+                document.getElementById("pickupDateError").textContent = 'Pickup date and time are required';
+                isValid = false;
+            }
+            if (!pickupLocation) {
+                document.getElementById("pickupLocationError").textContent = 'Pickup location is required';
+                isValid = false;
+            }
+            if (!paymentMethod) {
+                document.getElementById("paymentMethodError").textContent = 'Payment method is required';
+                isValid = false;
+            }
+
+            // If all fields are valid, submit the form
+            if (isValid) {
+                if (paymentMethod === "cash") {
+                    window.location.href = "pickupCash.html";
+                } else if (paymentMethod === "bkash") {
+                    window.location.href = "BkashPay.html";
+                }
+            }
+        }
+
+        // Function to validate email format
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>

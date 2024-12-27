@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with bKash</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container img {
+            max-width: 25%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container p {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .container .qr-code {
+            margin-bottom: 20px;
+        }
+        .container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src= "public/BKash-bKash-Logo.wine.svg" alt="bKash Logo">
+        <h1>Pay with bKash</h1>
+        <p>Please scan the QR code below to make your payment.</p>
+        <div class="qr-code">
+            <img src= "public/images/448150082_1305799460377006_5592956070451475933_n.jpg" alt="bKash QR Code">
+        </div>
+        <p>Or you can send the payment to the following number:</p>
+        <p><strong>01842155521</strong></p>
+        <button id="paid-button">Click if you paid</button>
+    </div>
+
+    <script>
+        const paidButton = document.getElementById('paid-button');
+        paidButton.addEventListener('click', function() {
+            window.location.href = 'bkashpaymentDone.html';
+        });
+    </script>
+</body>
+</html>
+
